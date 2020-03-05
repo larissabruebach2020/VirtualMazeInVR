@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/MazeTask/Scenes/Don'tDestroy.unity
+    guid: 105502bb06934fd46b7fb839776e5b0e
+  - enabled: 1
+    path: Assets/MazeTask/Scenes/Room1.unity
+    guid: d1228aa8609d0be46b1bd70e525eb534
+  - enabled: 1
+    path: Assets/MazeTask/Scenes/Room2.unity
+    guid: 21c67d33fab9d0842ad9e4028aa8d7a2
+  - enabled: 1
+    path: Assets/MazeTask/Scenes/Room3.unity
+    guid: b02334f5c3699c049ac51ceba537d89a
   m_configObjects: {}
