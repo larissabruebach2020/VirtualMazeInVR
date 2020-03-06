@@ -22,7 +22,8 @@ public class LoadNextRoom : MonoBehaviour
             loadUnloadDone = true;
 
             //load next scene and unload previous scene
-            SceneManager.UnloadSceneAsync(sceneToUnload);
+            if(SceneManager.sceneCount > 2)
+                SceneManager.UnloadSceneAsync(sceneToUnload);
             SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         }
 
