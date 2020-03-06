@@ -18,13 +18,14 @@ public class LoadNextRoom : MonoBehaviour
         //check, if we have already done this
         if (!loadUnloadDone)
         {
-            //load next scene and unload previous scene
-            SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync(sceneToUnload);
-
             //make sure this only happens once
             loadUnloadDone = true;
+
+            //load next scene and unload previous scene
+            SceneManager.UnloadSceneAsync(sceneToUnload);
+            SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         }
 
     }
+    
 }
