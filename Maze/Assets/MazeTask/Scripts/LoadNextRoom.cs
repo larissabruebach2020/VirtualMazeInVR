@@ -8,7 +8,6 @@ public class LoadNextRoom : MonoBehaviour
 
     //scene to be loaded next and scene to unload
     public int sceneToLoad;
-    public int sceneToUnload;
 
     //check, if everything is loaded/unloaded already
     bool loadUnloadDone = false;
@@ -22,8 +21,21 @@ public class LoadNextRoom : MonoBehaviour
             loadUnloadDone = true;
 
             //load next scene and unload previous scene
-            if(SceneManager.sceneCount > 2)
-                SceneManager.UnloadSceneAsync(sceneToUnload);
+            Scene[] activeScenes = new Scene[SceneManager.sceneCount];
+            
+            for(int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                activeScenes[i] = SceneManager.GetSceneAt(i);
+            }
+
+            foreach(Scene scene in activeScenes)
+            {
+                if (!gameObject.scene.Equals(scene) && !SceneManager.GetSceneByBuildIndex(0).Equals(scene))
+                {
+                    SceneManager.UnloadSceneAsync(scene);
+                }
+            }
+            
             SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         }
 
