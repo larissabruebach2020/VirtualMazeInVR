@@ -41,6 +41,7 @@ public class AskAgent : MonoBehaviour {
             yield return new WaitUntil(() => !m_AudioSource.isPlaying);
             m_Animator.SetTrigger("idle");
 
+            // make sure previous animation is finished
             yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).IsName("SSquirrel_Eat_Anim"));
         }
 
