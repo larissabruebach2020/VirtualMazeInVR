@@ -13,10 +13,21 @@ public class LoadNextRoom : MonoBehaviour
     //check, if everything is loaded/unloaded already
     bool loadUnloadDone = false;
 
+    // current condition variables
+    private SceneManagerScript m_SceneManager;
+    private int m_Condition;
+
+    // agents
+    public GameObject Agent_A;
+    public GameObject Agent_B;
+
     private void Awake()
     {
         m_MazeLogger = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<MazeLogging>();
         m_SceneToLoad = m_MazeLogger.m_RoomNumber;
+
+        m_SceneManager = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SceneManagerScript>();
+        m_Condition = m_SceneManager.m_CurrentCondition;
     }
 
     private void OnTriggerEnter()
@@ -45,6 +56,13 @@ public class LoadNextRoom : MonoBehaviour
 
             SceneManager.LoadSceneAsync(m_SceneToLoad, LoadSceneMode.Additive);
         }
+
+        // set agents to the right positions and assign audio files
+        Agent_A.transform.position = ConditionModel.conditionLib[m_Condition].m_PositionAgent_A;
+        Agent_A.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_A);
+
+        Agent_B.transform.position = ConditionModel.conditionLib[m_Condition].m_PositionAgent_B;
+        Agent_B.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_B);
 
     }
 

@@ -12,6 +12,11 @@ public class Conditions : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+    }
+
+    public void LoadAllConditions()
+    {
         if (!ConditionModel.conditionLib.ContainsKey(1))
         {
             // both right

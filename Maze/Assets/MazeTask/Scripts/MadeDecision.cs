@@ -20,6 +20,9 @@ public class MadeDecision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // delete current condition from dictionary
+        ConditionModel.conditionLib.Remove(sceneManager.m_CurrentCondition);
+
         // set values in maze logger
         logger.m_DecisionTime = System.DateTime.UtcNow.ToString(m_DateFormat);
         logger.m_Decision = gameObject.name;
