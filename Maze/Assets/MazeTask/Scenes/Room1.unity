@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8bd3060808dbf043862baff21ca733e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_NextRoom: 0
 --- !u!65 &33032541
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -600,7 +601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7ad295f3460d488b54bdb25e86686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 2
+  Agent_A: {fileID: 813414713}
+  Agent_B: {fileID: 1391733745}
 --- !u!65 &571691373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1284,6 +1286,10 @@ Prefab:
     - target: {fileID: 4188331867383602, guid: d2d67fda15fa26342932fffde03aeb05, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580388819070796, guid: d2d67fda15fa26342932fffde03aeb05, type: 2}
+      propertyPath: m_Name
+      value: Agent_A
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2d67fda15fa26342932fffde03aeb05, type: 2}
@@ -2351,6 +2357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8bd3060808dbf043862baff21ca733e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_NextRoom: 0
 --- !u!65 &1532782556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3383,7 +3390,7 @@ GameObject:
   - component: {fileID: 1952278601}
   m_Layer: 0
   m_Name: Agents
-  m_TagString: Untagged
+  m_TagString: Room1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3520,7 +3527,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d7ad295f3460d488b54bdb25e86686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 9
+  Agent_A: {fileID: 813414713}
+  Agent_B: {fileID: 1391733745}
 --- !u!65 &2039159566
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3655,7 +3663,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1745488152287196, guid: 4a7d6cee9f1328e468c9f485779e2c20, type: 2}
       propertyPath: m_Name
-      value: Squirrel_Agent
+      value: Agent_B
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a7d6cee9f1328e468c9f485779e2c20, type: 2}

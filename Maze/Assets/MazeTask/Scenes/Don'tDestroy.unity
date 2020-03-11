@@ -1938,9 +1938,10 @@ GameObject:
   - component: {fileID: 107275203}
   - component: {fileID: 107275202}
   - component: {fileID: 107275204}
+  - component: {fileID: 107275205}
   m_Layer: 0
   m_Name: SceneManager
-  m_TagString: Untagged
+  m_TagString: SceneManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1956,7 +1957,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04bb7ed51ee3d184096b0eeb9b0ebfc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazeLogging: {fileID: 107275204}
+  subjectID: 
+  m_TrialNumber: 0
+  m_CurrentCondition: 0
+  m_MaxNumberOfTrials: 16
 --- !u!4 &107275203
 Transform:
   m_ObjectHideFlags: 0
@@ -1986,20 +1990,33 @@ MonoBehaviour:
   m_Path: 
   m_TrialNumber: 
   m_TrialStartTime: 
-  m_RoomNumber: 
+  m_RoomNumber: 0
   m_RoomEnterTime: 
   m_AgentName_A: 
   m_AgentPosition_A: 
   m_AgentAnswer_A: 
+  m_AgentAsked_A: 
   m_AgentDistance_A: 
   m_AgentTime_A: 
   m_AgentName_B: 
   m_AgentPosition_B: 
   m_AgentAnswer_B: 
+  m_AgentAsked_B: 
   m_AgentDistance_B: 
   m_AgentTime_B: 
   m_Decision: 
   m_DecisionTime: 
+--- !u!114 &107275205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107275201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 194461a6663ad5042810d7ecbac90167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &108252593
 Prefab:
   m_ObjectHideFlags: 0
