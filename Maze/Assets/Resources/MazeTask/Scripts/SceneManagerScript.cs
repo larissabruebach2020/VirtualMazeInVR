@@ -79,8 +79,10 @@ public class SceneManagerScript : MonoBehaviour
                 GenerateCondition();
             }
 
-            m_CurrentCondition = Random.Range(1, m_ConditionList.Count);
+            m_CurrentCondition = m_ConditionList[Random.Range(1, m_ConditionList.Count)];
             m_ConditionList.Remove(m_CurrentCondition);
+
+            mazeLogging.m_Condition = m_CurrentCondition.ToString();
 
             // set known values in logging file
             mazeLogging.m_TrialNumber = m_TrialNumber.ToString();
@@ -92,20 +94,26 @@ public class SceneManagerScript : MonoBehaviour
             if (ConditionModel.conditionLib[1].m_PositionAgent_A.Equals(m_Right))
             {
                 mazeLogging.m_AgentPosition_A = "right";
+                Debug.Log("A detected right; lib " + ConditionModel.conditionLib[1].m_PositionAgent_A);
             }
             else if (ConditionModel.conditionLib[1].m_PositionAgent_A.Equals(m_Left))
             {
+                Debug.Log("A detected left; lib " + ConditionModel.conditionLib[1].m_PositionAgent_A);
                 mazeLogging.m_AgentPosition_A = "left";
             }
 
             if (ConditionModel.conditionLib[1].m_PositionAgent_B.Equals(m_Right))
             {
+                Debug.Log("B detected right; lib " + ConditionModel.conditionLib[1].m_PositionAgent_B);
                 mazeLogging.m_AgentPosition_B = "right";
             }
             else if (ConditionModel.conditionLib[1].m_PositionAgent_B.Equals(m_Left))
             {
+                Debug.Log("B detected left; lib " + ConditionModel.conditionLib[1].m_PositionAgent_B);
                 mazeLogging.m_AgentPosition_B = "left";
             }
+
+            Debug.Log("Condition: " + m_CurrentCondition);
         }
 
     }
@@ -135,7 +143,6 @@ public class SceneManagerScript : MonoBehaviour
 
         Agent_A.transform.position += ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_A;
         Agent_A.transform.rotation *= ConditionModel.conditionLib[m_CurrentCondition].m_RotationAgent_A;
-        Debug.Log("Rotation " + Agent_A.transform.rotation);
         Agent_A.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_CurrentCondition].m_AudioAgent_A);
 
         Agent_B.transform.position += ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_B;

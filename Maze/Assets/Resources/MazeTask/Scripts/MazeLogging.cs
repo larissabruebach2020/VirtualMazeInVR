@@ -19,9 +19,9 @@ public class MazeLogging : MonoBehaviour
     public string m_TrialStartTime = ""; // set in SceneManager initially, then copied from m_DecisionTime
     public int m_RoomNumber = 0; // set in SceneManager
     public string m_RoomEnterTime = ""; // set in EnterRoom (onTriggerEnter)
+    public string m_Condition = ""; // set in SceneManager
 
     // agent A
-    public string m_AgentName_A = "Agent A"; // always set
     public string m_AgentPosition_A = ""; // set in SceneManager
     public string m_AgentAnswer_A = ""; // set in SceneManager
     public string m_AgentAsked_A = ""; // set in AskAgent TODO
@@ -29,7 +29,6 @@ public class MazeLogging : MonoBehaviour
     public string m_AgentTime_A = ""; // set in AskAgent TODO
 
     // agent B
-    public string m_AgentName_B = "Agent B"; // always set
     public string m_AgentPosition_B = ""; // set in SceneManager
     public string m_AgentAnswer_B = ""; // set in SceneManager
     public string m_AgentAsked_B = ""; // set in AskAgent
@@ -58,9 +57,9 @@ public class MazeLogging : MonoBehaviour
     public void AddHeadlines(string path)
     {
         // add headlines to the csv file
-        string generalInfo = "TrialNumber,TrialStartTime,RoomNumber,RoomEnterTime";
-        string agentA = "AgentName_A,AgentPosition_A,AgentAnswer_A,AgentAsked_A,AgentDistance_A,AgentTime_A";
-        string agentB = "AgentName_B,AgentPosition_B,AgentAnswer_B,AgentAsked_B,AgentDistance_B,AgentTime_B";
+        string generalInfo = "TrialNumber,TrialStartTime,RoomNumber,RoomEnterTime,Condition";
+        string agentA = "AgentPosition_A,AgentAnswer_A,AgentAsked_A,AgentDistance_A,AgentTime_A";
+        string agentB = "AgentPosition_B,AgentAnswer_B,AgentAsked_B,AgentDistance_B,AgentTime_B";
         string decision = "Decision,DecisionTime";
 
         string headlines = generalInfo + "," + agentA + "," + agentB + "," + decision + "\n";
@@ -75,9 +74,9 @@ public class MazeLogging : MonoBehaviour
 
     public void WriteToLogFile()
     {
-        string generalInfo = m_TrialNumber + "," + m_TrialStartTime + "," + m_RoomNumber + "," + m_RoomEnterTime;
-        string agentA = m_AgentName_A + "," + m_AgentPosition_A + "," + m_AgentAnswer_A + "," + m_AgentAsked_A + "," + m_AgentDistance_A + "," + m_AgentTime_A;
-        string agentB = m_AgentName_B + "," + m_AgentPosition_B + "," + m_AgentAnswer_B + "," + m_AgentAsked_B + "," + m_AgentDistance_B + "," + m_AgentTime_B;
+        string generalInfo = m_TrialNumber + "," + m_TrialStartTime + "," + m_RoomNumber + "," + m_RoomEnterTime + "," + m_Condition;
+        string agentA = m_AgentPosition_A + "," + m_AgentAnswer_A + "," + m_AgentAsked_A + "," + m_AgentDistance_A + "," + m_AgentTime_A;
+        string agentB = m_AgentPosition_B + "," + m_AgentAnswer_B + "," + m_AgentAsked_B + "," + m_AgentDistance_B + "," + m_AgentTime_B;
         string decision = m_Decision + "," + m_DecisionTime;
 
         string trial = generalInfo + "," + agentA + "," + agentB + "," + decision + "\n";
@@ -92,6 +91,7 @@ public class MazeLogging : MonoBehaviour
         m_TrialStartTime = m_DecisionTime;
         m_RoomNumber = 0;
         m_RoomEnterTime = "";
+        m_Condition = "";
 
         // agent A
         m_AgentPosition_A = "";
