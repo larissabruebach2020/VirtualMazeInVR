@@ -17,8 +17,8 @@ public class SceneManagerScript : MonoBehaviour
     public int m_TrialNumber = 0;
 
     // possible agent position
-    private Vector3 m_Right = new Vector3(-2, 0.1f, -1);
-    private Vector3 m_Left = new Vector3(2, 0.1f, -1);
+    private Vector3 m_Right = new Vector3(-1.5f, 0.1f, -1);
+    private Vector3 m_Left = new Vector3(1.5f, 0.1f, -1);
 
     // current condition
     public int m_CurrentCondition;
@@ -91,29 +91,24 @@ public class SceneManagerScript : MonoBehaviour
             mazeLogging.m_AgentAnswer_A = ConditionModel.conditionLib[m_CurrentCondition].m_AudioAgent_A;
             mazeLogging.m_AgentAnswer_B = ConditionModel.conditionLib[m_CurrentCondition].m_AudioAgent_B;
 
-            if (ConditionModel.conditionLib[1].m_PositionAgent_A.Equals(m_Right))
+            if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_A.Equals(m_Right))
             {
                 mazeLogging.m_AgentPosition_A = "right";
-                Debug.Log("A detected right; lib " + ConditionModel.conditionLib[1].m_PositionAgent_A);
             }
-            else if (ConditionModel.conditionLib[1].m_PositionAgent_A.Equals(m_Left))
+            else if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_A.Equals(m_Left))
             {
-                Debug.Log("A detected left; lib " + ConditionModel.conditionLib[1].m_PositionAgent_A);
                 mazeLogging.m_AgentPosition_A = "left";
             }
 
-            if (ConditionModel.conditionLib[1].m_PositionAgent_B.Equals(m_Right))
+            if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_B.Equals(m_Right))
             {
-                Debug.Log("B detected right; lib " + ConditionModel.conditionLib[1].m_PositionAgent_B);
                 mazeLogging.m_AgentPosition_B = "right";
             }
-            else if (ConditionModel.conditionLib[1].m_PositionAgent_B.Equals(m_Left))
+            else if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_B.Equals(m_Left))
             {
-                Debug.Log("B detected left; lib " + ConditionModel.conditionLib[1].m_PositionAgent_B);
                 mazeLogging.m_AgentPosition_B = "left";
             }
 
-            Debug.Log("Condition: " + m_CurrentCondition);
         }
 
     }

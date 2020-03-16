@@ -18,8 +18,6 @@ public class AskAgent : MonoBehaviour
 
     private float m_DistanceToAgent;
 
-    private string m_DateFormat = "yyyy-MM-dd_HH-mm-ss";
-
     // current condition variables
     private SceneManagerScript m_SceneManager;
     private int m_Condition;
@@ -66,7 +64,7 @@ public class AskAgent : MonoBehaviour
             m_Animator.SetTrigger("idle");
 
             // make sure previous animation is finished
-            yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).IsName("SSquirrel_Eat_Anim"));
+            yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
 
             // log all needed variables for the agent interaction
             if (m_LoggingNeeded)
@@ -75,13 +73,13 @@ public class AskAgent : MonoBehaviour
                 {
                     m_MazeLogging.m_AgentAsked_A = "true";
                     m_MazeLogging.m_AgentDistance_A = m_DistanceToAgent.ToString();
-                    m_MazeLogging.m_AgentTime_A = System.DateTime.UtcNow.ToString(m_DateFormat);
+                    m_MazeLogging.m_AgentTime_A = System.DateTime.UtcNow;
                 }
                 else if (name.Equals("Agent_B"))
                 {
                     m_MazeLogging.m_AgentAsked_B = "true";
                     m_MazeLogging.m_AgentDistance_B = m_DistanceToAgent.ToString();
-                    m_MazeLogging.m_AgentTime_B = System.DateTime.UtcNow.ToString(m_DateFormat);
+                    m_MazeLogging.m_AgentTime_B = System.DateTime.UtcNow;
                 }
 
                 m_LoggingNeeded = false;

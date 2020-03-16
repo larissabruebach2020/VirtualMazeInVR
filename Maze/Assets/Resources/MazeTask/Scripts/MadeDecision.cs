@@ -6,7 +6,6 @@ public class MadeDecision : MonoBehaviour
 {
 
     private MazeLogging logger;
-    private string m_DateFormat = "yyyy-MM-dd_HH-mm-ss";
 
     private SceneManagerScript sceneManager;
 
@@ -21,7 +20,7 @@ public class MadeDecision : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // set values in maze logger
-        logger.m_DecisionTime = System.DateTime.UtcNow.ToString(m_DateFormat);
+        logger.m_DecisionTime = System.DateTime.UtcNow;
         logger.m_Decision = gameObject.name;
 
         // save values for this trial

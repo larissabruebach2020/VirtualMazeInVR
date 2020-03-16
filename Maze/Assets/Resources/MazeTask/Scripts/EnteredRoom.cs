@@ -6,7 +6,6 @@ public class EnteredRoom : MonoBehaviour
 {
 
     private MazeLogging logger;
-    private string m_DateFormat = "yyyy-MM-dd_HH-mm-ss";
 
     private void Awake()
     {
@@ -15,6 +14,6 @@ public class EnteredRoom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        logger.m_RoomEnterTime = System.DateTime.UtcNow.ToString(m_DateFormat);
+        logger.m_RoomEnterTime = System.DateTime.UtcNow;
     }
 }

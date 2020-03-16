@@ -73,27 +73,24 @@ public class LoadNextRoom : MonoBehaviour
 
             // set agents to the right positions, rotations and assign audio files
 
-            Agent_A.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_A;
+            Agent_A.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_A;
             Agent_A.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_A);
 
-            Agent_B.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_B;
+            Agent_B.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_B;
             Agent_B.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_B);
-
-            // check if agents are rotated, then switch the roation
+            
+            // check if agents are rotated, adapt the position
             if (GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.rotation.Equals(m_BaseRotation))
             {
-                Agent_A.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_B;
-                Agent_B.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_A;
-                Debug.Log("other rotation " + Agent_A.transform.rotation);
-
+                Agent_A.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_B;
+                Agent_B.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_A;
             }
             else
             {
-                Agent_A.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_A;
-                Agent_B.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_B;
-                Debug.Log("original rotation " + GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.rotation);
+                Agent_A.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_A;
+                Agent_B.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_B;
             }
-            
+
 
         }
 
