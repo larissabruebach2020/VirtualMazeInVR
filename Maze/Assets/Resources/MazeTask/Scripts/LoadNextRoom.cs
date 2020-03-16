@@ -21,6 +21,9 @@ public class LoadNextRoom : MonoBehaviour
     private GameObject Agent_A;
     private GameObject Agent_B;
 
+    // rotation angle
+    private Quaternion m_BaseRotation = new Quaternion(0f, 1.0f, 0f, 0f);
+
     private void Awake()
     {
         m_MazeLogger = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<MazeLogging>();
@@ -71,12 +74,26 @@ public class LoadNextRoom : MonoBehaviour
             // set agents to the right positions, rotations and assign audio files
 
             Agent_A.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_A;
-            Agent_A.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_A;
             Agent_A.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_A);
 
             Agent_B.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_B;
-            Agent_B.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_B;
             Agent_B.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_B);
+
+            // check if agents are rotated, then switch the roation
+            if (GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.rotation.Equals(m_BaseRotation))
+            {
+                Agent_A.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_B;
+                Agent_B.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_A;
+                Debug.Log("other rotation " + Agent_A.transform.rotation);
+
+            }
+            else
+            {
+                Agent_A.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_A;
+                Agent_B.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_B;
+                Debug.Log("original rotation " + GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.rotation);
+            }
+            
 
         }
 
