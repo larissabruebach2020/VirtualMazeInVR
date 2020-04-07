@@ -68,17 +68,27 @@ public class LoadNextRoom : MonoBehaviour
             yield return new WaitUntil(() => SceneManager.GetSceneByName("Room" + m_SceneToLoad).isLoaded);
 
             // get agents of next room
-            Agent_A = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(0).gameObject;
-            Agent_B = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(1).gameObject;
+            if(GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(0).gameObject.name.Equals("Agent_A"))
+            {
+                Agent_A = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(0).gameObject;
+                Agent_B = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(1).gameObject;
+            }
+            else
+            {
+                Agent_A = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(1).gameObject;
+                Agent_B = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(0).gameObject;
+            }
 
             // set agents to the right positions, rotations and assign audio files
+
+            m_Condition = m_SceneManager.m_CurrentCondition;
 
             Agent_A.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_A;
             Agent_A.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_A);
 
             Agent_B.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_B;
             Agent_B.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_B);
-            
+
             // check if agents are rotated, adapt the position
             if (GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.rotation.Equals(m_BaseRotation))
             {

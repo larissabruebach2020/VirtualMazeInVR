@@ -131,8 +131,16 @@ public class SceneManagerScript : MonoBehaviour
         yield return new WaitUntil(() => SceneManager.GetSceneByName("Room1").isLoaded);
 
         // get agents of next room
-        Agent_A = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(0).gameObject;
-        Agent_B = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(1).gameObject;
+        if (GameObject.FindGameObjectWithTag("Room1").transform.GetChild(0).gameObject.name.Equals("Agent_A"))
+        {
+            Agent_A = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(0).gameObject;
+            Agent_B = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(1).gameObject;
+        }
+        else
+        {
+            Agent_A = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(1).gameObject;
+            Agent_B = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(0).gameObject;
+        }
 
         // set agents to the right positions and assign audio files
 
