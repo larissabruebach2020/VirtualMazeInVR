@@ -26,14 +26,19 @@ public class AgentLook : MonoBehaviour
         if (!animated)
         {
             fakeEye.LookAt(eyeDest);
-            Vector3 rot = fakeEye.localEulerAngles;
-            if ((rot.z > 356 || rot.z < 4) && (rot.y > 270 || rot.y < 280))
+            Vector3 rot = fakeEye.localRotation.eulerAngles;
+            if ((rot.z > 358 || rot.z < 2) && (rot.y > 250 && rot.y < 270))
             {
                 transform.LookAt(eyeDest);
                 transform.Rotate(0, 90, 0);
-            }
+            } 
         } 
         
 
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 }
