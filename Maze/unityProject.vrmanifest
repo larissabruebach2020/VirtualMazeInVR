@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.maze.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Gabin\\Documents\\Larissa_Internship\\AlexMaze\\Maze\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\Repositories\\AlexMaze\\Maze\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Maze [Testing]"
