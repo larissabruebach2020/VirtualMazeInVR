@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
+using TMPro;
+using UnityEngine.UI;
 
 public class MazeLogging : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class MazeLogging : MonoBehaviour
     public string m_SubjectID;
     public string m_Date;
     private string m_DateFormat = "yyyy-MM-dd_HH-mm-ss";
-    private string m_Directory = "Assets";
+    private string m_Directory = "Assets/LogFiles/";
 
     // file path
     public string m_Path;
@@ -47,6 +49,36 @@ public class MazeLogging : MonoBehaviour
     private string m_AgentAsked_B_Decision = "";
     private string m_AgentAsked_A_AgentAsked_B = "";
 
+    // ui elements
+    public Button startButton;
+    public TMP_InputField participantName;
+
+    public TextMeshProUGUI error;
+    public GameObject ui;
+
+    private void Start()
+    {
+        Button btn = startButton.GetComponent<Button>();
+        btn.onClick.AddListener(GetNameAndStart);
+    }
+
+    void GetNameAndStart()
+    {
+        if (string.IsNullOrEmpty(participantName.text))
+        {
+            error.text = "No name entered!";
+        }
+        else
+        {
+            error.text = "";
+
+            // get input from user and start logging
+            CreateNewLogfile(participantName.text);
+
+            ui.SetActive(false);
+        }
+
+    }
 
     public void CreateNewLogfile(string subjectID)
     {
@@ -65,13 +97,13 @@ public class MazeLogging : MonoBehaviour
     public void AddHeadlines(string path)
     {
         // add headlines to the csv file
-        string generalInfo = "TrialNumber,TrialStartTime,RoomNumber,RoomEnterTime,Condition";
-        string agentA = "AgentPosition_A,AgentAnswer_A,AgentAsked_A,AgentDistance_A,AgentTime_A";
-        string agentB = "AgentPosition_B,AgentAnswer_B,AgentAsked_B,AgentDistance_B,AgentTime_B";
-        string decision = "Decision,DecisionTime";
-        string timedeltas = "RoomEnter_Decision,TrialStar_Decision,AgentAsked_A_Decision,m_AgentAsked_B_Decision,m_AgentAsked_A_AgentAsked_B";
+        string generalInfo = "TrialNumber;TrialStartTime;RoomNumber;RoomEnterTime;Condition";
+        string agentA = "AgentPosition_A;AgentAnswer_A;AgentAsked_A;AgentDistance_A;AgentTime_A";
+        string agentB = "AgentPosition_B;AgentAnswer_B;AgentAsked_B;AgentDistance_B;AgentTime_B";
+        string decision = "Decision;DecisionTime";
+        string timedeltas = "RoomEnter_Decision;TrialStar_Decision;AgentAsked_A_Decision;m_AgentAsked_B_Decision;m_AgentAsked_A_AgentAsked_B";
 
-        string headlines = generalInfo + "," + agentA + "," + agentB + "," + decision + "," + timedeltas + "\n";
+        string headlines = generalInfo + ";" + agentA + ";" + agentB + ";" + decision + ";" + timedeltas + "\n";
 
         File.AppendAllText(path, headlines);
     }
@@ -85,13 +117,13 @@ public class MazeLogging : MonoBehaviour
     {
         CalculateTimeDeltas();
         
-        string generalInfo = m_TrialNumber + "," + m_TrialStartTime.ToString(m_DateFormat) + "," + m_RoomNumber + "," + m_RoomEnterTime + "," + m_Condition;
-        string agentA = m_AgentPosition_A + "," + m_AgentAnswer_A + "," + m_AgentAsked_A + "," + m_AgentDistance_A + "," + m_AgentTime_A.ToString(m_DateFormat);
-        string agentB = m_AgentPosition_B + "," + m_AgentAnswer_B + "," + m_AgentAsked_B + "," + m_AgentDistance_B + "," + m_AgentTime_B.ToString(m_DateFormat);
-        string decision = m_Decision + "," + m_DecisionTime.ToString(m_DateFormat);
-        string timedeltas = m_RoomEnter_Decicion + "," + m_TrialStart_Decision + "," + m_AgentAsked_A_Decision + "," + m_AgentAsked_B_Decision + "," + m_AgentAsked_A_AgentAsked_B;
+        string generalInfo = m_TrialNumber + ";" + m_TrialStartTime.ToString(m_DateFormat) + ";" + m_RoomNumber + ";" + m_RoomEnterTime + ";" + m_Condition;
+        string agentA = m_AgentPosition_A + ";" + m_AgentAnswer_A + ";" + m_AgentAsked_A + ";" + m_AgentDistance_A + ";" + m_AgentTime_A.ToString(m_DateFormat);
+        string agentB = m_AgentPosition_B + ";" + m_AgentAnswer_B + ";" + m_AgentAsked_B + ";" + m_AgentDistance_B + ";" + m_AgentTime_B.ToString(m_DateFormat);
+        string decision = m_Decision + ";" + m_DecisionTime.ToString(m_DateFormat);
+        string timedeltas = m_RoomEnter_Decicion + ";" + m_TrialStart_Decision + ";" + m_AgentAsked_A_Decision + ";" + m_AgentAsked_B_Decision + ";" + m_AgentAsked_A_AgentAsked_B;
 
-        string trial = generalInfo + "," + agentA + "," + agentB + "," + decision + "," + timedeltas + "\n";
+        string trial = generalInfo + ";" + agentA + ";" + agentB + ";" + decision + ";" + timedeltas + "\n";
 
         File.AppendAllText(m_Path, trial);
     }

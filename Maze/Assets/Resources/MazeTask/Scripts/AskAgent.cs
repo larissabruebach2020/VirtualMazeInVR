@@ -22,6 +22,10 @@ public class AskAgent : MonoBehaviour
     private SceneManagerScript m_SceneManager;
     private int m_Condition;
 
+    // right and left eye
+    public AgentLook rightEye;
+    public AgentLook leftEye;
+
 
     public void Start()
     {
@@ -39,6 +43,10 @@ public class AskAgent : MonoBehaviour
     {
         if (m_TalkPress.GetStateDown(SteamVR_Input_Sources.Any) && !m_AudioSource.isPlaying)
         {
+            // turn off agent look
+            rightEye.animated = true;
+            leftEye.animated = true;
+
             // get postition of camera and agent on ground (no y position)
             Vector2 cameraPos = new Vector2(m_CameraRig.transform.position.x, m_CameraRig.transform.position.z);
             Vector2 agentPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.z);
@@ -54,17 +62,21 @@ public class AskAgent : MonoBehaviour
             else if (name.Equals("Agent_B"))
             {
                 m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_B);
-
             }
-
+            
             m_AudioSource.Play();
 
             // wait until audio file is done playing to set agent animation back to idle
             yield return new WaitUntil(() => !m_AudioSource.isPlaying);
             m_Animator.SetTrigger("idle");
+            
 
             // make sure previous animation is finished
             yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
+
+            // turn on agent look
+            rightEye.animated = false;
+            leftEye.animated = false;
 
             // log all needed variables for the agent interaction
             if (m_LoggingNeeded)

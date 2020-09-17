@@ -6,10 +6,10 @@ public class Conditions : MonoBehaviour
 {
 
     string m_AudioPath = "MazeTask/Audio/";
-    Vector3 m_RightPosition = new Vector3(-1.5f, 0.05f, -1);
-    Vector3 m_LeftPosition = new Vector3(1.5f, 0.05f, -1);
-    Quaternion m_RightRotation = Quaternion.Euler(0.0f, 45.0f, 0.0f);
-    Quaternion m_LeftRotation = Quaternion.Euler(0.0f, -45.0f, 0.0f);
+    Vector3 m_RightPosition = new Vector3(-1.8f, 0.01f, -0.8f);
+    Vector3 m_LeftPosition = new Vector3(1.8f, 0.01f, -0.8f);
+    Quaternion m_RightRotation = Quaternion.Euler(0.0f, 30.0f, 0.0f);
+    Quaternion m_LeftRotation = Quaternion.Euler(0.0f, -30.0f, 0.0f);
 
     // Use this for initialization
     void Awake()

@@ -10,15 +10,12 @@ public class SceneManagerScript : MonoBehaviour
     private MazeLogging mazeLogging;
     private Conditions m_AllConditions;
 
-    // subject ID
-    public string subjectID;
-
     // number of trials
     public int m_TrialNumber = 0;
 
     // possible agent position
-    private Vector3 m_Right = new Vector3(-1.5f, 0.1f, -1);
-    private Vector3 m_Left = new Vector3(1.5f, 0.1f, -1);
+    private string m_Right = "(-1.8, 0.0, -0.8)";
+    private string m_Left = "(1.8, 0.0, -0.8)";
 
     // current condition
     public int m_CurrentCondition;
@@ -33,6 +30,9 @@ public class SceneManagerScript : MonoBehaviour
     private GameObject Agent_A;
     private GameObject Agent_B;
 
+    // end ui
+    public GameObject m_UIEnd;
+
 
     void Start()
     {
@@ -44,7 +44,6 @@ public class SceneManagerScript : MonoBehaviour
 
         // start logging and set first trial start time
         mazeLogging = GetComponent<MazeLogging>();
-        mazeLogging.CreateNewLogfile(subjectID);
 
         // load dictionary with all conditions (8)
         m_AllConditions = GetComponent<Conditions>();
@@ -57,12 +56,16 @@ public class SceneManagerScript : MonoBehaviour
 
         // setup first room, as load next room is not called
         StartCoroutine(StartFirstRoom());
+
+        // find ui end and deactivate it
+        m_UIEnd = GameObject.FindGameObjectWithTag("UI");
+        m_UIEnd.SetActive(false);
     }
 
     public void StartTrial(int roomNumber)
     {
         // check if we reached the maximum number of trials
-        if (m_TrialNumber < m_MaxNumberOfTrials)
+        if (m_TrialNumber <= m_MaxNumberOfTrials)
         {
             // increase trial number
             m_TrialNumber++;
@@ -79,7 +82,7 @@ public class SceneManagerScript : MonoBehaviour
                 GenerateCondition();
             }
 
-            m_CurrentCondition = m_ConditionList[Random.Range(1, m_ConditionList.Count)];
+            m_CurrentCondition = m_ConditionList[Random.Range(0, m_ConditionList.Count)];
             m_ConditionList.Remove(m_CurrentCondition);
 
             mazeLogging.m_Condition = m_CurrentCondition.ToString();
@@ -91,23 +94,17 @@ public class SceneManagerScript : MonoBehaviour
             mazeLogging.m_AgentAnswer_A = ConditionModel.conditionLib[m_CurrentCondition].m_AudioAgent_A;
             mazeLogging.m_AgentAnswer_B = ConditionModel.conditionLib[m_CurrentCondition].m_AudioAgent_B;
 
-            if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_A.Equals(m_Right))
+            if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_A.ToString().Equals(m_Right))
             {
                 mazeLogging.m_AgentPosition_A = "right";
-            }
-            else if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_A.Equals(m_Left))
-            {
-                mazeLogging.m_AgentPosition_A = "left";
-            }
-
-            if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_B.Equals(m_Right))
-            {
-                mazeLogging.m_AgentPosition_B = "right";
-            }
-            else if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_B.Equals(m_Left))
-            {
                 mazeLogging.m_AgentPosition_B = "left";
             }
+            else if (ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_A.ToString().Equals(m_Left))
+            {
+                mazeLogging.m_AgentPosition_A = "left";
+                mazeLogging.m_AgentPosition_B = "right";
+            }
+            
 
         }
 
