@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
 using uniwue.hci.vilearn;
-using Valve.VR;
 
 public class XRController : MonoBehaviour {
 

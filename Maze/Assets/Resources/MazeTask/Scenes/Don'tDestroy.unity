@@ -45305,7 +45305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e914efa66de14293f4ff9450161c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackingConfiguration: 0
+  trackingConfiguration: 2
   isWalkingEnabled: 0
   vrPlayer: {fileID: 1899487148}
   desktopPlayer: {fileID: 1950796072}
