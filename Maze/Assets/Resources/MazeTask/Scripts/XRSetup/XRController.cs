@@ -47,8 +47,8 @@ public class XRController : MonoBehaviour {
 
     private void CalculateMovement()
     {
-        //if (!gameState.isWalkingEnabled)
-        //    return;
+        if (!gameState.isWalkingEnabled)
+            return;
 
         // figure out movement orientation
         Vector3 orientationEuler = new Vector3(0, transform.eulerAngles.y, 0);

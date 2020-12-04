@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Analytics;
+using uniwue.hci.vilearn;
 
 // Script by IJM: http://answers.unity3d.com/questions/29741/mouse-look-script.html
 // Changed to fit standard C# conventions
@@ -38,6 +40,9 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
+        if (!GameState.Instance.isWalkingEnabled)
+            return;
+
         if (axes == RotationAxes.MouseXAndY)
         {
             // Read the mouse input axis
