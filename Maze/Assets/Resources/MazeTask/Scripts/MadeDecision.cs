@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using uniwue.hci.vilearn;
 
 public class MadeDecision : MonoBehaviour
 {
-
     private MazeLogging logger;
     private SceneManagerScript sceneManager;
-    private VRController walking;
 
     public int m_NextRoom;
 
@@ -17,7 +16,6 @@ public class MadeDecision : MonoBehaviour
     {
         logger = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<MazeLogging>();
         sceneManager = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SceneManagerScript>();
-        walking = GameObject.FindGameObjectWithTag("VRController").GetComponent<VRController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,8 +37,8 @@ public class MadeDecision : MonoBehaviour
             // display end message for participant
             m_UIEnd = sceneManager.m_UIEnd;
             m_UIEnd.SetActive(true);
-            walking.enabled = false;
 
+            GameState.Instance.isWalkingEnabled = false;
         } else
         {
             Debug.Log("not end" + sceneManager.m_MaxNumberOfTrials + sceneManager.m_TrialNumber);

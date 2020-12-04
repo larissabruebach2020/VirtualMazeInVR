@@ -38,4 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/MazeTask/Scenes/Room10.unity
     guid: 1f4c77e4f61f829439332efa1d3d7883
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1476938dacdc03d4b9201acee8f5e56f,
+      type: 2}

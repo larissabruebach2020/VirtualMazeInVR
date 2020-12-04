@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using uniwue.hci.vilearn;
 using Valve.VR;
 
 public class AskAgent : MonoBehaviour
 {
-
-    public SteamVR_Action_Boolean m_TalkPress = null;
-
     private Transform m_CameraRig = null;
     private Animator m_Animator;
     private AudioSource m_AudioSource;
@@ -26,10 +25,14 @@ public class AskAgent : MonoBehaviour
     public AgentLook rightEye;
     public AgentLook leftEye;
 
+    private GameState gameState;
+
 
     public void Start()
     {
-        m_CameraRig = SteamVR_Render.Top().origin;
+        gameState = GameState.Instance;
+        m_CameraRig = gameState.GetPlayerCamera();
+
         m_Animator = GetComponent<Animator>();
         m_AudioSource = GetComponent<AudioSource>();
 
@@ -41,7 +44,11 @@ public class AskAgent : MonoBehaviour
 
     public IEnumerator OnTriggerStay(Collider other)
     {
-        if (m_TalkPress.GetStateDown(SteamVR_Input_Sources.Any) && !m_AudioSource.isPlaying)
+        bool buttonPressed = gameState.GetXrControllerInput(XRNode.RightHand).triggerButton;
+        buttonPressed |= gameState.GetXrControllerInput(XRNode.LeftHand).triggerButton;
+        buttonPressed |= Input.GetKey(gameState.desktopTriggerAgentInteraction);
+
+        if (buttonPressed && !m_AudioSource.isPlaying)
         {
             // turn off agent look
             rightEye.animated = true;

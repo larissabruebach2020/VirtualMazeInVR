@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using uniwue.hci.vilearn;
 
 public class AgentLook : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class AgentLook : MonoBehaviour
 
     private void Start()
     {
-        eyeDest = GameObject.FindGameObjectWithTag("MainCamera").transform;  
+        eyeDest = GameState.Instance.GetPlayerCamera();
     }
 
     public void OnTriggerStay(Collider other)

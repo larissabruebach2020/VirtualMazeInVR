@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using TMPro;
 using System;
+using uniwue.hci.vilearn;
 
 public class ParticipantName : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class ParticipantName : MonoBehaviour
 
     private MazeLogging mazeLogging;
     private SceneManagerScript sceneManager;
-    private VRController walking;
 
     void Start()
     {
@@ -23,7 +23,6 @@ public class ParticipantName : MonoBehaviour
 
         mazeLogging = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<MazeLogging>();
         sceneManager = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SceneManagerScript>();
-        walking = GameObject.FindGameObjectWithTag("VRController").GetComponent<VRController>();
     }
 
     void GetNameAndStart()
@@ -46,7 +45,7 @@ public class ParticipantName : MonoBehaviour
             // enable walking
 
             // activate walking
-            walking.enabled = true;
+            GameState.Instance.isWalkingEnabled = true;
 
             this.gameObject.SetActive(false);
         }
