@@ -24,8 +24,6 @@ public class AgentLook : MonoBehaviour
             bool b = rot.x < 10;
             bool c = rot.y > 330;
             bool d = rot.y < 30;
-            Debug.Log("" + a + b + c + d);
-            Debug.Log(rot);
             if (Agent.Equals("A"))
             {
                 if ((rot.x > 350 || rot.x < 10) && (rot.y > 330 || rot.y < 30))
