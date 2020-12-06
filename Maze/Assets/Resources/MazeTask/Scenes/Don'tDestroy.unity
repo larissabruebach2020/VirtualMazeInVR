@@ -2181,6 +2181,8 @@ MonoBehaviour:
   m_TrialNumber: 0
   m_CurrentCondition: 0
   m_MaxNumberOfTrials: 0
+  Agent_A: {fileID: 8100978695520458068, guid: a44e9719efdb4b8468ea8b844ad28654, type: 3}
+  Agent_B: {fileID: 6004772147805252276, guid: 68c2a5070dbe7d444877a1898e44001b, type: 3}
   m_UIEnd: {fileID: 0}
 --- !u!4 &107275203
 Transform:
@@ -45305,7 +45307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e914efa66de14293f4ff9450161c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackingConfiguration: 2
+  trackingConfiguration: 0
   isWalkingEnabled: 0
   vrPlayer: {fileID: 1899487148}
   desktopPlayer: {fileID: 1950796072}

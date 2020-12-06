@@ -14,23 +14,33 @@ public class LoadNextRoom : MonoBehaviour
     bool loadUnloadDone = false;
 
     // current condition variables
-    private SceneManagerScript m_SceneManager;
+    private SceneManagerScript m_SceneManagerScript;
     private int m_Condition;
 
     // agents
     private GameObject Agent_A;
     private GameObject Agent_B;
+    private GameObject Agent_A_Instance;
+    private GameObject Agent_B_Instance;
+    private GameObject agents;
+
+    // scene manager
+    private GameObject m_SceneManager;
 
     // rotation angle
     private Quaternion m_BaseRotation = new Quaternion(0f, 1.0f, 0f, 0f);
 
     private void Awake()
     {
-        m_MazeLogger = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<MazeLogging>();
+        m_SceneManager = GameObject.FindGameObjectWithTag("SceneManager");
+        m_MazeLogger = m_SceneManager.GetComponent<MazeLogging>();
         m_SceneToLoad = m_MazeLogger.m_RoomNumber;
 
-        m_SceneManager = GameObject.FindGameObjectWithTag("SceneManager").GetComponent<SceneManagerScript>();
-        m_Condition = m_SceneManager.m_CurrentCondition;
+        m_SceneManagerScript = m_SceneManager.GetComponent<SceneManagerScript>();
+        m_Condition = m_SceneManagerScript.m_CurrentCondition;
+
+        Agent_A = m_SceneManagerScript.Agent_A;
+        Agent_B = m_SceneManagerScript.Agent_B;
     }
 
     private IEnumerator OnTriggerEnter()
@@ -67,38 +77,33 @@ public class LoadNextRoom : MonoBehaviour
             // wait until new room is fully loaded
             yield return new WaitUntil(() => SceneManager.GetSceneByName("Room" + m_SceneToLoad).isLoaded);
 
-            // get agents of next room
-            if(GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(0).gameObject.name.Equals("Agent_A"))
-            {
-                Agent_A = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(0).gameObject;
-                Agent_B = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(1).gameObject;
-            }
-            else
-            {
-                Agent_A = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(1).gameObject;
-                Agent_B = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.GetChild(0).gameObject;
-            }
+            // instantiate agents of next room
+            Agent_A_Instance = Instantiate(Agent_A);
+            Agent_B_Instance = Instantiate(Agent_B);
+            agents = GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad);
+            Agent_A_Instance.transform.SetParent(agents.transform, false);
+            Agent_B_Instance.transform.SetParent(agents.transform, false);
 
             // set agents to the right positions, rotations and assign audio files
 
-            m_Condition = m_SceneManager.m_CurrentCondition;
+            m_Condition = m_SceneManagerScript.m_CurrentCondition;
 
-            Agent_A.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_A;
-            Agent_A.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_A);
+            Agent_A_Instance.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_A;
+            Agent_A_Instance.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_A);
 
-            Agent_B.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_B;
-            Agent_B.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_B);
+            Agent_B_Instance.transform.rotation *= ConditionModel.conditionLib[m_Condition].m_RotationAgent_B;
+            Agent_B_Instance.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_Condition].m_AudioAgent_B);
 
             // check if agents are rotated, adapt the position
             if (GameObject.FindGameObjectWithTag("Room" + m_SceneToLoad).transform.rotation.Equals(m_BaseRotation))
             {
-                Agent_A.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_B;
-                Agent_B.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_A;
+                Agent_A_Instance.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_B;
+                Agent_B_Instance.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_A;
             }
             else
             {
-                Agent_A.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_A;
-                Agent_B.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_B;
+                Agent_A_Instance.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_A;
+                Agent_B_Instance.transform.position += ConditionModel.conditionLib[m_Condition].m_PositionAgent_B;
             }
 
 
@@ -106,4 +111,9 @@ public class LoadNextRoom : MonoBehaviour
 
     }
 
+    // for first scene
+    public void AddAgentsForFirstRoom()
+    {
+
+    }
 }

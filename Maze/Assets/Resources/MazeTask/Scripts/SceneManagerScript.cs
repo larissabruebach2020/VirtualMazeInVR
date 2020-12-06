@@ -27,8 +27,9 @@ public class SceneManagerScript : MonoBehaviour
     private List<int> m_ConditionList;
 
     // agents
-    private GameObject Agent_A;
-    private GameObject Agent_B;
+    public GameObject Agent_A;
+    public GameObject Agent_B;
+    private GameObject agents_Room1;
 
     // end ui
     public GameObject m_UIEnd;
@@ -127,27 +128,22 @@ public class SceneManagerScript : MonoBehaviour
     {
         yield return new WaitUntil(() => SceneManager.GetSceneByName("Room1").isLoaded);
 
-        // get agents of next room
-        if (GameObject.FindGameObjectWithTag("Room1").transform.GetChild(0).gameObject.name.Equals("Agent_A"))
-        {
-            Agent_A = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(0).gameObject;
-            Agent_B = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(1).gameObject;
-        }
-        else
-        {
-            Agent_A = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(1).gameObject;
-            Agent_B = GameObject.FindGameObjectWithTag("Room1").transform.GetChild(0).gameObject;
-        }
+        // Instantiate Agents
+        GameObject Agent_A_Instance = Instantiate(Agent_A);
+        GameObject Agent_B_Instance = Instantiate(Agent_B);
+        agents_Room1 = GameObject.FindGameObjectWithTag("Room1");
+        Agent_A_Instance.transform.SetParent(agents_Room1.transform, false);
+        Agent_B_Instance.transform.SetParent(agents_Room1.transform, false);
 
         // set agents to the right positions and assign audio files
 
-        Agent_A.transform.position += ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_A;
-        Agent_A.transform.rotation *= ConditionModel.conditionLib[m_CurrentCondition].m_RotationAgent_A;
-        Agent_A.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_CurrentCondition].m_AudioAgent_A);
+        Agent_A_Instance.transform.position += ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_A;
+        Agent_A_Instance.transform.rotation *= ConditionModel.conditionLib[m_CurrentCondition].m_RotationAgent_A;
+        Agent_A_Instance.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_CurrentCondition].m_AudioAgent_A);
 
-        Agent_B.transform.position += ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_B;
-        Agent_B.transform.rotation *= ConditionModel.conditionLib[m_CurrentCondition].m_RotationAgent_B;
-        Agent_B.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_CurrentCondition].m_AudioAgent_B);
+        Agent_B_Instance.transform.position += ConditionModel.conditionLib[m_CurrentCondition].m_PositionAgent_B;
+        Agent_B_Instance.transform.rotation *= ConditionModel.conditionLib[m_CurrentCondition].m_RotationAgent_B;
+        Agent_B_Instance.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(ConditionModel.conditionLib[m_CurrentCondition].m_AudioAgent_B);
 
     }
 
