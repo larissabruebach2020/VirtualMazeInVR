@@ -1,0 +1,313 @@
+fileFormatVersion: 2
+guid: aa59588314d197542a234c9695eb7617
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 2371038768179750987
+    second: MO_L2.001
+  - first:
+      74: 5167896657460838318
+    second: MO_L3
+  - first:
+      74: -5088216431758357829
+    second: MO_L4
+  - first:
+      74: -6293380137588779971
+    second: MO_R5
+  - first:
+      74: 6358775096317222597
+    second: MO_R6
+  - first:
+      74: 442486789281127495
+    second: MO_R7
+  - first:
+      74: 1458710769439082442
+    second: MO_R8
+  - first:
+      74: -5252816984213320552
+    second: idle
+  - first:
+      74: 6949184546656155075
+    second: left1
+  - first:
+      74: 6392811606333736301
+    second: left2
+  - first:
+      74: 6729541483410954253
+    second: right1
+  - first:
+      74: -8015796746906566308
+    second: right2
+  - first:
+      74: 3920029609970565427
+    second: Bip01|Action
+  - first:
+      74: 5466897819505601095
+    second: Bip01|Anim 1
+  - first:
+      74: -4677105024588254818
+    second: Bip01|B
+  - first:
+      74: 3097825733750887330
+    second: Bip01|Bip01 Footsteps|Take 001|BaseLayer
+  - first:
+      74: 8996876661282030961
+    second: Bip01|Bip01|Take 001|BaseLayer
+  - first:
+      74: 7018897973489186843
+    second: Bip01|c
+  - first:
+      74: -461263952576847797
+    second: Bip01|c.001
+  - first:
+      74: 583469679313923385
+    second: Bip01|c.002
+  - first:
+      74: 5582000029459043886
+    second: Bip01|c.003
+  - first:
+      74: -4817820631937124872
+    second: Bip01|c.004
+  - first:
+      74: 4212996593018070782
+    second: Bip01|c.005
+  - first:
+      74: -872757456660172126
+    second: Bip01|c.006
+  - first:
+      74: 4880313879683711807
+    second: Bip01|c.007
+  - first:
+      74: 2132657364110152860
+    second: Bip01|c.008
+  - first:
+      74: -3025053553626186829
+    second: Bip01|c.009
+  - first:
+      74: 7802371565981893917
+    second: Bip01|c.010
+  - first:
+      74: 468296437718467327
+    second: Bip01|c.011
+  - first:
+      74: -1624108030570033795
+    second: Bip01|c.012
+  - first:
+      74: -8086591920952388764
+    second: Bip01|c.013
+  - first:
+      74: -6502004452450102944
+    second: Bip01|c.014
+  - first:
+      74: 2721725871903706041
+    second: Bip01|c.015
+  - first:
+      74: 8391410778308715730
+    second: Bip01|Default
+  - first:
+      74: -4069073756614384652
+    second: Bip01|idle
+  - first:
+      74: 7382089429476563547
+    second: Bip01|left1
+  - first:
+      74: -3573791101746432802
+    second: Bip01|left2
+  - first:
+      74: 4490370509234570425
+    second: Bip01|MO_L1.001
+  - first:
+      74: 3228208985181045098
+    second: Bip01|MO_L1.002
+  - first:
+      74: 8810900751878076272
+    second: Bip01|MO_L1
+  - first:
+      74: -4888968870219473277
+    second: Bip01|MO_L1.003
+  - first:
+      74: -4935096843788029551
+    second: Bip01|MO_L2
+  - first:
+      74: 5489929500107454583
+    second: Bip01|MO_L2.001
+  - first:
+      74: -4176776179548787637
+    second: Bip01|MO_L3
+  - first:
+      74: 8316126326181552216
+    second: Bip01|MO_L4
+  - first:
+      74: -5841408234658459219
+    second: Bip01|MO_R5
+  - first:
+      74: 4836565594358645696
+    second: Bip01|MO_R6
+  - first:
+      74: 3894881282198287727
+    second: Bip01|MO_R7
+  - first:
+      74: 6310131884623559283
+    second: Bip01|MO_R8
+  - first:
+      74: -8738221958097711902
+    second: Bip01|PoseLib
+  - first:
+      74: 870678269372305610
+    second: Bip01|right1
+  - first:
+      74: 6714398820329669028
+    second: Bip01|right2
+  - first:
+      74: 5517720470098743132
+    second: Bip01 Footsteps|Action
+  - first:
+      74: -4642204657095113914
+    second: Bip01 Footsteps|B
+  - first:
+      74: -554108369309548041
+    second: Bip01 Footsteps|Bip01 Footsteps|Take 001|BaseLayer
+  - first:
+      74: 8616592100131026874
+    second: Bip01 Footsteps|Bip01|Take 001|BaseLayer
+  - first:
+      74: 167925906395858936
+    second: Bip01 Footsteps|c
+  - first:
+      74: 613165839172141109
+    second: Bip01 Footsteps|c.001
+  - first:
+      74: -1384681261695377958
+    second: Bip01 Footsteps|c.002
+  - first:
+      74: -6069620507495735004
+    second: Bip01 Footsteps|c.003
+  - first:
+      74: -6115204172076980950
+    second: Bip01 Footsteps|c.004
+  - first:
+      74: 6187982747310746085
+    second: Bip01 Footsteps|c.005
+  - first:
+      74: -5020045060710238574
+    second: Bip01 Footsteps|c.006
+  - first:
+      74: -7549979827609085709
+    second: Bip01 Footsteps|c.007
+  - first:
+      74: 3870874562802330441
+    second: Bip01 Footsteps|c.008
+  - first:
+      74: -8708505651986943472
+    second: Bip01 Footsteps|c.009
+  - first:
+      74: -6885850118490474982
+    second: Bip01 Footsteps|c.010
+  - first:
+      74: -1976899902191561760
+    second: Bip01 Footsteps|c.011
+  - first:
+      74: -5696095169046652525
+    second: Bip01 Footsteps|c.012
+  - first:
+      74: -2932147753192403927
+    second: Bip01 Footsteps|c.013
+  - first:
+      74: 4641087620582653981
+    second: Bip01 Footsteps|c.014
+  - first:
+      74: -7076179287835293399
+    second: Bip01 Footsteps|Default
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
