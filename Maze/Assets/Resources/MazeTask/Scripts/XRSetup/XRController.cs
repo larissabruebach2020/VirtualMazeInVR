@@ -18,7 +18,8 @@ public class XRController : MonoBehaviour {
 
         rig = gameState.GetPlayer().GetChild(0);
         head = gameState.GetPlayerCamera();
-        characterController = gameState.GetPlayer().GetComponent<CharacterController>();
+        characterController = gameState.GetPlayer().GetComponentInChildren<CharacterController>();
+        characterController.detectCollisions = false;
 
     }
 	

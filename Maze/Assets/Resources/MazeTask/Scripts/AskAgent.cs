@@ -6,8 +6,9 @@ using uniwue.hci.vilearn;
 public class AskAgent : MonoBehaviour
 {
     private Transform m_CameraRig = null;
-    private Animator m_Animator;
+    //private Animator m_Animator;
     private AudioSource m_AudioSource;
+    private ObjectRotaion m_rotation;
 
     // logging variables
     private bool m_LoggingNeeded = true;
@@ -20,8 +21,8 @@ public class AskAgent : MonoBehaviour
     private int m_Condition;
 
     // right and left eye
-    public AgentLook rightEye;
-    public AgentLook leftEye;
+    //public AgentLook rightEye;
+    //public AgentLook leftEye;
 
     private GameState gameState;
 
@@ -31,8 +32,9 @@ public class AskAgent : MonoBehaviour
         gameState = GameState.Instance;
         m_CameraRig = gameState.GetPlayerCamera();
 
-        m_Animator = GetComponent<Animator>();
+        //m_Animator = GetComponent<Animator>();
         m_AudioSource = GetComponent<AudioSource>();
+        m_rotation = GetComponent<ObjectRotaion>();
 
         m_MazeLogging = GameObject.FindGameObjectWithTag(("SceneManager")).GetComponent<MazeLogging>();
 
@@ -42,6 +44,7 @@ public class AskAgent : MonoBehaviour
 
     public IEnumerator OnTriggerStay(Collider other)
     {
+        Debug.Log("Found Trigger");
         bool buttonPressed = gameState.GetXrControllerInput(XRNode.RightHand).triggerButton;
         buttonPressed |= gameState.GetXrControllerInput(XRNode.LeftHand).triggerButton;
         buttonPressed |= Input.GetKey(gameState.desktopTriggerAgentInteraction);
@@ -49,8 +52,8 @@ public class AskAgent : MonoBehaviour
         if (buttonPressed && !m_AudioSource.isPlaying)
         {
             // turn off agent look
-            rightEye.animated = true;
-            leftEye.animated = true;
+            //rightEye.animated = true;
+            //leftEye.animated = true;
 
             // get postition of camera and agent on ground (no y position)
             Vector2 cameraPos = new Vector2(m_CameraRig.transform.position.x, m_CameraRig.transform.position.z);
@@ -60,28 +63,31 @@ public class AskAgent : MonoBehaviour
             m_DistanceToAgent = Vector2.Distance(cameraPos, agentPos);
 
             // play audio file from agent here and start animation
-            if (name.Equals("Agent_A"))
+            /*if (name.Equals("Agent_A"))
             {
                 m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_A);
             }
             else if (name.Equals("Agent_B"))
             {
                 m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_B);
-            }
+            }*/
+
+            m_rotation.shouldRotate = true;
             
             m_AudioSource.Play();
 
             // wait until audio file is done playing to set agent animation back to idle
             yield return new WaitUntil(() => !m_AudioSource.isPlaying);
-            m_Animator.SetTrigger("idle");
+            //m_Animator.SetTrigger("idle");
+            m_rotation.shouldRotate = false;
             
 
             // make sure previous animation is finished
-            yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
+            //yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
 
             // turn on agent look
-            rightEye.animated = false;
-            leftEye.animated = false;
+            //rightEye.animated = false;
+            //leftEye.animated = false;
 
             // log all needed variables for the agent interaction
             if (m_LoggingNeeded)

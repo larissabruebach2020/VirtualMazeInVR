@@ -6,8 +6,8 @@ public class Conditions : MonoBehaviour
 {
 
     string m_AudioPath = "MazeTask/Audio/";
-    Vector3 m_RightPosition = new Vector3(-1.8f, 0.01f, -0.8f);
-    Vector3 m_LeftPosition = new Vector3(1.8f, 0.01f, -0.8f);
+    Vector3 m_RightPosition = new Vector3(-1.8f, 1.7f, -0.8f);
+    Vector3 m_LeftPosition = new Vector3(1.8f, 1.7f, -0.8f);
     Quaternion m_RightRotation = Quaternion.Euler(0.0f, 30.0f, 0.0f);
     Quaternion m_LeftRotation = Quaternion.Euler(0.0f, -30.0f, 0.0f);
 

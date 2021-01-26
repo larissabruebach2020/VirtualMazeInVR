@@ -2181,9 +2181,9 @@ MonoBehaviour:
   m_TrialNumber: 0
   m_CurrentCondition: 0
   m_MaxNumberOfTrials: 0
-  Agent_A: {fileID: 8100978695520458068, guid: a44e9719efdb4b8468ea8b844ad28654, type: 3}
-  Agent_B: {fileID: 6004772147805252276, guid: 68c2a5070dbe7d444877a1898e44001b, type: 3}
-  m_UIEnd: {fileID: 0}
+  Agent_A: {fileID: 6553592164021116957, guid: 46376ce9d565aab4ea12a297ca6b5bd5, type: 3}
+  Agent_B: {fileID: 6499699499028048896, guid: 97227df7de599274391c6543874523f3, type: 3}
+  m_UIEnd: {fileID: 512615819}
 --- !u!4 &107275203
 Transform:
   m_ObjectHideFlags: 0
@@ -9876,6 +9876,7 @@ GameObject:
   - component: {fileID: 440781173}
   - component: {fileID: 440781174}
   - component: {fileID: 440781175}
+  - component: {fileID: 440781176}
   m_Layer: 0
   m_Name: DesktopHead
   m_TagString: MainCamera
@@ -9959,6 +9960,19 @@ MonoBehaviour:
   maximumX: 360
   minimumY: -60
   maximumY: 60
+--- !u!135 &440781176
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440781172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &441587666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1189090924586164, guid: b281c6294e101724e9e1e4410f5557cd,
@@ -14319,6 +14333,7 @@ GameObject:
   - component: {fileID: 599616344}
   - component: {fileID: 599616345}
   - component: {fileID: 599616346}
+  - component: {fileID: 599616347}
   m_Layer: 0
   m_Name: VRHead
   m_TagString: MainCamera
@@ -14401,6 +14416,19 @@ MonoBehaviour:
   m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 0
+--- !u!135 &599616347
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599616343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &600407806 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1189090924586164, guid: b281c6294e101724e9e1e4410f5557cd,
@@ -45273,11 +45301,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834873510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -91, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1899487148}
   - {fileID: 1950796072}
+  - {fileID: 1899487148}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45307,8 +45335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e914efa66de14293f4ff9450161c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackingConfiguration: 0
-  isWalkingEnabled: 0
+  trackingConfiguration: 2
+  isWalkingEnabled: 1
   vrPlayer: {fileID: 1899487148}
   desktopPlayer: {fileID: 1950796072}
   inputRight: {fileID: 1139851225}
@@ -47394,6 +47422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1899487148}
   - component: {fileID: 1899487149}
+  - component: {fileID: 1899487151}
   m_Layer: 0
   m_Name: VRPlayer
   m_TagString: Untagged
@@ -47408,13 +47437,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899487147}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -91.01, y: 0, z: -2.869}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 501993075}
   m_Father: {fileID: 1834873511}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1899487149
 CharacterController:
@@ -47429,11 +47458,27 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_SlopeLimit: 0
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!54 &1899487151
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899487147}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1901546442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48395,6 +48440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1950796072}
   - component: {fileID: 1950796073}
+  - component: {fileID: 1950796074}
   m_Layer: 0
   m_Name: DesktopPlayer
   m_TagString: Untagged
@@ -48410,12 +48456,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950796071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -91.01, y: 0, z: -2.869}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 209653667}
   m_Father: {fileID: 1834873511}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1950796073
 CharacterController:
@@ -48435,6 +48481,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!54 &1950796074
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950796071}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1951260227
 PrefabInstance:
   m_ObjectHideFlags: 0
