@@ -60,11 +60,12 @@ public class AskAgent : MonoBehaviour
             m_DistanceToAgent = Vector2.Distance(cameraPos, agentPos);
 
             // play audio file from agent here and start animation
-            if (name.Equals("Agent_A"))
+            if (name.Contains("Agent_A"))
             {
                 m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_A);
+                Debug.Log("setting trigger");
             }
-            else if (name.Equals("Agent_B"))
+            else if (name.Contains("Agent_B"))
             {
                 m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_B);
             }
@@ -86,13 +87,13 @@ public class AskAgent : MonoBehaviour
             // log all needed variables for the agent interaction
             if (m_LoggingNeeded)
             {
-                if (name.Equals("Agent_A"))
+                if (name.Contains("Agent_A"))
                 {
                     m_MazeLogging.m_AgentAsked_A = "true";
                     m_MazeLogging.m_AgentDistance_A = m_DistanceToAgent.ToString();
                     m_MazeLogging.m_AgentTime_A = System.DateTime.UtcNow;
                 }
-                else if (name.Equals("Agent_B"))
+                else if (name.Contains("Agent_B"))
                 {
                     m_MazeLogging.m_AgentAsked_B = "true";
                     m_MazeLogging.m_AgentDistance_B = m_DistanceToAgent.ToString();
