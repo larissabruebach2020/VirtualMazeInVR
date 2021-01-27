@@ -4,11 +4,10 @@
 //==============================================================================
 using UnityEngine;
 using UnityEngine.XR;
+using uniwue.hci.vilearn;
 
-namespace uniwue.hci.vilearn
-{
-    /// <summary>GameState</summary>
-    public class GameState : MonoBehaviour
+/// <summary>GameState</summary>
+public class GameState : MonoBehaviour
     {
         public enum enTrackingConfiguration
         {
@@ -42,21 +41,26 @@ namespace uniwue.hci.vilearn
                 {
                     _gameState = FindObjectOfType(typeof(GameState)) as GameState;
 
-                    if (!_gameState)
+                if (!_gameState)
                     {
                         Debug.LogError(
                             "There needs to be one active GameState script on a GameObject in your scene.");
                     }
                 }
-
+                
                 return _gameState;
             }
         }
 
-        public Transform GetPlayerCamera()
-        {
-            return GetPlayer().GetComponentInChildren<Camera>().transform;
-        }
+    private void Awake()
+    {
+        isWalkingEnabled = false;
+    }
+
+    public Transform GetPlayerCamera()
+    {
+        return GetPlayer().GetComponentInChildren<Camera>().transform;
+    }
 
         public Transform GetPlayer()
         {
@@ -74,4 +78,3 @@ namespace uniwue.hci.vilearn
             return null;
         }
     }
-}

@@ -18,7 +18,8 @@ public class XRController : MonoBehaviour {
 
         rig = gameState.GetPlayer().GetChild(0);
         head = gameState.GetPlayerCamera();
-        characterController = gameState.GetPlayer().GetComponent<CharacterController>();
+        characterController = gameState.GetPlayer().GetComponentInChildren<CharacterController>();
+        //characterController.detectCollisions = false;
 
     }
 	
@@ -70,6 +71,24 @@ public class XRController : MonoBehaviour {
         else
         {
             speed = 0f;
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            // set speed
+            speed = 2.0f;
+
+            // orientation
+            movement += orientation * (speed * Vector3.forward) * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            // set speed
+            speed = -2.0f;
+
+            // orientation
+            movement += orientation * (speed * Vector3.forward) * Time.deltaTime;
         }
 
         // apply
