@@ -41,21 +41,26 @@ public class GameState : MonoBehaviour
                 {
                     _gameState = FindObjectOfType(typeof(GameState)) as GameState;
 
-                    if (!_gameState)
+                if (!_gameState)
                     {
                         Debug.LogError(
                             "There needs to be one active GameState script on a GameObject in your scene.");
                     }
                 }
-
+                
                 return _gameState;
             }
         }
 
-        public Transform GetPlayerCamera()
-        {
-            return GetPlayer().GetComponentInChildren<Camera>().transform;
-        }
+    private void Awake()
+    {
+        isWalkingEnabled = false;
+    }
+
+    public Transform GetPlayerCamera()
+    {
+        return GetPlayer().GetComponentInChildren<Camera>().transform;
+    }
 
         public Transform GetPlayer()
         {
