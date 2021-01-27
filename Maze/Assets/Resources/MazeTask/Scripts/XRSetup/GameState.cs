@@ -4,11 +4,10 @@
 //==============================================================================
 using UnityEngine;
 using UnityEngine.XR;
+using uniwue.hci.vilearn;
 
-namespace uniwue.hci.vilearn
-{
-    /// <summary>GameState</summary>
-    public class GameState : MonoBehaviour
+/// <summary>GameState</summary>
+public class GameState : MonoBehaviour
     {
         public enum enTrackingConfiguration
         {
@@ -74,4 +73,3 @@ namespace uniwue.hci.vilearn
             return null;
         }
     }
-}
