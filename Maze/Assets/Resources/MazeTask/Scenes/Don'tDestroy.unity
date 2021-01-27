@@ -9877,6 +9877,7 @@ GameObject:
   - component: {fileID: 440781174}
   - component: {fileID: 440781175}
   - component: {fileID: 440781176}
+  - component: {fileID: 440781177}
   m_Layer: 0
   m_Name: DesktopHead
   m_TagString: MainCamera
@@ -9973,6 +9974,14 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!81 &440781177
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440781172}
+  m_Enabled: 1
 --- !u!1 &441587666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1189090924586164, guid: b281c6294e101724e9e1e4410f5557cd,
@@ -45197,7 +45206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e914efa66de14293f4ff9450161c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackingConfiguration: 2
+  trackingConfiguration: 0
   isWalkingEnabled: 1
   vrPlayer: {fileID: 5328721966053723741}
   desktopPlayer: {fileID: 1950796072}
@@ -48222,6 +48231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1950796072}
   - component: {fileID: 1950796073}
+  - component: {fileID: 1950796074}
   m_Layer: 0
   m_Name: DesktopPlayer
   m_TagString: Untagged
@@ -48262,6 +48272,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1950796074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950796071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8e7cd87cc03814cbd31a2d0f16adc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 0.2
 --- !u!1001 &1951260227
 PrefabInstance:
   m_ObjectHideFlags: 0
