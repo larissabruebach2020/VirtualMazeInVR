@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 4828993989590112}
   - component: {fileID: 2816700585160579091}
   - component: {fileID: 5071400821375067500}
+  - component: {fileID: 6294894695933099365}
   m_Layer: 0
   m_Name: Building_N_Prefab
   m_TagString: Untagged
@@ -149,8 +150,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.1839924, y: 7.312546, z: 4.1494656}
-  m_Center: {x: 4.9520283, y: 3.156273, z: -1.5747328}
+  m_Size: {x: 6.3817763, y: 8.860517, z: 6.93989}
+  m_Center: {x: 2.090317, y: 3.9302583, z: -4.599391}
 --- !u!65 &5071400821375067500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -162,5 +163,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9261944, y: 1, z: 1.7837038}
-  m_Center: {x: -0.4630972, y: 0, z: -1.4130387}
+  m_Size: {x: 1.9261944, y: 8.862068, z: 1.7837038}
+  m_Center: {x: -0.4630972, y: 3.931034, z: -1.4130387}
+--- !u!65 &6294894695933099365
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681277682126416}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.2733593, y: 8.841701, z: 7.2529984}
+  m_Center: {x: 2.8515267, y: 3.9208503, z: -0.050920486}
