@@ -48775,8 +48775,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "                              Welcome to the VR Maze!\n                    
-    Your objective is to explore the maze.\n                   Use forward on the
-    control stick to move.                                            You can ask
+    Your objective is to explore the maze.\n            Use forward on the control
+    stick/trackpad to move.                                            You can ask
     bystanders for advice on where to go using the trigger.\n                                            
     Have fun!\n\n                         Please enter your participant code:"
   m_isRightToLeft: 0
@@ -48847,10 +48847,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -82.703064, w: 0}
   m_textInfo:
     textComponent: {fileID: 1973926056}
-    characterCount: 402
+    characterCount: 404
     spriteCount: 0
-    spaceCount: 223
-    wordCount: 41
+    spaceCount: 216
+    wordCount: 42
     linkCount: 0
     lineCount: 7
     pageCount: 1
