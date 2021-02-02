@@ -33,7 +33,6 @@ public class MadeDecision : MonoBehaviour
         // check if we reached max number of trials
         if (sceneManager.m_MaxNumberOfTrials == sceneManager.m_TrialNumber)
         {
-            Debug.Log("end");
             // display end message for participant
             m_UIEnd = sceneManager.m_UIEnd;
             m_UIEnd.SetActive(true);
@@ -41,7 +40,6 @@ public class MadeDecision : MonoBehaviour
             GameState.Instance.isWalkingEnabled = false;
         } else
         {
-            Debug.Log("not end" + sceneManager.m_MaxNumberOfTrials + sceneManager.m_TrialNumber);
             // start new trial
             sceneManager.StartTrial(m_NextRoom);
         }

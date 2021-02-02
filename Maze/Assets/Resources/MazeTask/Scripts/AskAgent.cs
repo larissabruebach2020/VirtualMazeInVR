@@ -8,7 +8,7 @@ public class AskAgent : MonoBehaviour
     private Transform m_CameraRig = null;
     //private Animator m_Animator;
     private AudioSource m_AudioSource;
-    private ObjectRotaion m_rotation;
+    private KITalk m_rotation;
 
     // logging variables
     private bool m_LoggingNeeded = true;
@@ -34,7 +34,7 @@ public class AskAgent : MonoBehaviour
 
         //m_Animator = GetComponent<Animator>();
         m_AudioSource = GetComponent<AudioSource>();
-        m_rotation = GetComponent<ObjectRotaion>();
+        m_rotation = GetComponent<KITalk>();
 
         m_MazeLogging = GameObject.FindGameObjectWithTag(("SceneManager")).GetComponent<MazeLogging>();
 
@@ -44,7 +44,6 @@ public class AskAgent : MonoBehaviour
 
     public IEnumerator OnTriggerStay(Collider other)
     {
-        Debug.Log("Found Trigger");
         bool buttonPressed = gameState.GetXrControllerInput(XRNode.RightHand).triggerButton;
         buttonPressed |= gameState.GetXrControllerInput(XRNode.LeftHand).triggerButton;
         buttonPressed |= Input.GetKey(gameState.desktopTriggerAgentInteraction);
@@ -72,14 +71,14 @@ public class AskAgent : MonoBehaviour
                 m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_B);
             }*/
 
-            m_rotation.shouldRotate = true;
+            m_rotation.shouldTalk = true;
             
             m_AudioSource.Play();
 
             // wait until audio file is done playing to set agent animation back to idle
             yield return new WaitUntil(() => !m_AudioSource.isPlaying);
             //m_Animator.SetTrigger("idle");
-            m_rotation.shouldRotate = false;
+            m_rotation.shouldTalk = false;
             
 
             // make sure previous animation is finished
