@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aa5dec84f1174394b82481e28813e025, type: 2}
+  - {fileID: 2100000, guid: 7ae49f8f2fc2dc140a83693c9734793d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d4d2cfc46281bbb429ec3cd9db09c366, type: 2}
+  - {fileID: 2100000, guid: 7ae49f8f2fc2dc140a83693c9734793d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 1797323902800856375}
   - component: {fileID: -8262660369489032228}
   - component: {fileID: 7837369138304326765}
-  - component: {fileID: 3310578804723967313}
+  - component: {fileID: 5757904480116561075}
   m_Layer: 0
   m_Name: KI_Komplex
   m_TagString: Untagged
@@ -316,7 +316,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 150
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3310578804723967313
+--- !u!114 &5757904480116561075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,14 +325,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6553592164021116957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84ababd5807ff2c4b8cf978917f981ca, type: 3}
+  m_Script: {fileID: 11500000, guid: ed2949bda1740454094a16bab481b886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldRotate: 0
+  shouldTalk: 1
   min: 0.007
   max: 0.008
-  sin: 0
-  speedSin: 3
+  window: 100
+  audioSource: {fileID: 0}
 --- !u!1 &8293776520562977700
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8fe0184eda8824749b446be258d8514e, type: 2}
+  - {fileID: 2100000, guid: 7ae49f8f2fc2dc140a83693c9734793d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

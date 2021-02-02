@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6006198401272589873}
   - component: {fileID: 5887487606037236505}
   - component: {fileID: 5499798484171607732}
-  - component: {fileID: 4778647293246077153}
+  - component: {fileID: 7580082522482565869}
   m_Layer: 0
   m_Name: KI_Einfach
   m_TagString: Untagged
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 26e9115bd0bd03a47a7905072e9252f6, type: 2}
+  - {fileID: 2100000, guid: 15d2528accf255b4184c9477648957e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447c0a906babbbb429447db3bb9a69be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4778647293246077153
+--- !u!114 &7580082522482565869
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,11 +213,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6499699499028048896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84ababd5807ff2c4b8cf978917f981ca, type: 3}
+  m_Script: {fileID: 11500000, guid: ed2949bda1740454094a16bab481b886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldRotate: 0
+  shouldTalk: 0
   min: 0.9
   max: 1
   sin: 0
-  speedSin: 3
+  window: 100
+  audioSource: {fileID: 0}
