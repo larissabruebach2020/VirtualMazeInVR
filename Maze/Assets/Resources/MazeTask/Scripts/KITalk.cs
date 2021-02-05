@@ -10,15 +10,13 @@ public class KITalk : MonoBehaviour
     // KI einfach min 0.9 max 1
     public float min = 0.9f;
     public float max = 1f;
-    
-    public int window = 100;
 
-    public AudioSource audioSource;
-    
+    public float sin = 0f;
+    public float speedSin = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,28 +24,18 @@ public class KITalk : MonoBehaviour
     {
         if(shouldTalk == true)
         {
-            ScaleToAudioSource();
+            ScaleObject();
         }
 
     }
 
-    private void ScaleToAudioSource()
+    private void ScaleObject()
     {
-        // get window of audio source output
-        var samples = new float[6000];
-        audioSource.GetOutputData(samples, 0);
+        sin = Mathf.Sin(Time.time * speedSin); // -1 - 1
+        sin = sin.Remap(-1f, 1f, min, max);
+        Vector3 vec = new Vector3(sin, sin, sin);
 
-        float total = 0;
-        foreach (var sample in samples)
-        {
-            total += sample * sample;
-        }
-        float scale = Mathf.Sqrt(total / samples.Length);
-
-        // remap for scaling
-        scale = scale.Remap(0.25f, 0f, min, max);
-
-        transform.localScale = new Vector3(scale, scale, scale);
+        transform.localScale = vec;
     }
 }
 
