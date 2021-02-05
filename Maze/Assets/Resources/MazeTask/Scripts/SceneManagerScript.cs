@@ -14,8 +14,8 @@ public class SceneManagerScript : MonoBehaviour
     public int m_TrialNumber = 0;
 
     // possible agent position
-    private string m_Right = "(-1.8, 0.0, -0.8)";
-    private string m_Left = "(1.8, 0.0, -0.8)";
+    private string m_Right = "(-1.8, 1.7, -0.8)";
+    private string m_Left = "(1.8, 1.7, -0.8)";
 
     // current condition
     public int m_CurrentCondition;
