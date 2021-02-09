@@ -80,8 +80,8 @@ public class AskAgent : MonoBehaviour
             yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
 
             // turn on agent look
-            rightEye.animated = false;
-            leftEye.animated = false;
+            //rightEye.animated = false;
+            //leftEye.animated = false;
 
             // log all needed variables for the agent interaction
             if (m_LoggingNeeded)
