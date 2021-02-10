@@ -2181,8 +2181,8 @@ MonoBehaviour:
   m_TrialNumber: 0
   m_CurrentCondition: 0
   m_MaxNumberOfTrials: 0
-  Agent_A: {fileID: 5090749870691342030, guid: e0344811a1668614690ef196c33ee82e, type: 3}
-  Agent_B: {fileID: 4920382940849068586, guid: ad0e9becee2abb74cb2834613b873416, type: 3}
+  Agent_A: {fileID: 3966920282394009168, guid: e0344811a1668614690ef196c33ee82e, type: 3}
+  Agent_B: {fileID: 4018463293605268055, guid: ad0e9becee2abb74cb2834613b873416, type: 3}
   m_UIEnd: {fileID: 512615819}
 --- !u!4 &107275203
 Transform:
