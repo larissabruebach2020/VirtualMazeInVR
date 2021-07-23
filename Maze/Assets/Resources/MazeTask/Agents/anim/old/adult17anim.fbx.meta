@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: d66270e722d17b041852475c4b9290e1
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -4677105024588254818
+    second: Bip01|B
+  - first:
+      74: 3097825733750887330
+    second: Bip01|Bip01 Footsteps|Take 001|BaseLayer
+  - first:
+      74: 5542166477124579453
+    second: Bip01|C
+  - first:
+      74: -1921995758108965841
+    second: Bip01|D
+  - first:
+      74: 8391410778308715730
+    second: Bip01|Default
+  - first:
+      74: -2840342785500540676
+    second: Bip01|Default.001
+  - first:
+      74: -5997455553565291402
+    second: Bip01|E
+  - first:
+      74: 8481284083874394674
+    second: Bip01|E.001
+  - first:
+      74: -3917996486045339010
+    second: Bip01|E.002
+  - first:
+      74: 5239109615955349991
+    second: Bip01|E.003
+  - first:
+      74: -3650043824123000914
+    second: Bip01|G
+  - first:
+      74: 7863241834935134582
+    second: Bip01|H
+  - first:
+      74: -8153913871765227126
+    second: Bip01|H.001
+  - first:
+      74: -8738221958097711902
+    second: Bip01|PoseLib
+  - first:
+      74: -4642204657095113914
+    second: Bip01 Footsteps|B
+  - first:
+      74: -554108369309548041
+    second: Bip01 Footsteps|Bip01 Footsteps|Take 001|BaseLayer
+  - first:
+      74: 7850771212852033052
+    second: Bip01 Footsteps|C
+  - first:
+      74: -5485483513060345811
+    second: Bip01 Footsteps|D
+  - first:
+      74: -7076179287835293399
+    second: Bip01 Footsteps|Default
+  - first:
+      74: 5782841055408893122
+    second: Bip01 Footsteps|Default.001
+  - first:
+      74: -8537986285817271721
+    second: Bip01 Footsteps|E
+  - first:
+      74: 4309754340571485585
+    second: Bip01 Footsteps|E.001
+  - first:
+      74: -4573922624095859183
+    second: Bip01 Footsteps|E.002
+  - first:
+      74: -5743796570455933854
+    second: Bip01 Footsteps|E.003
+  - first:
+      74: 8157436277211818403
+    second: Bip01 Footsteps|G
+  - first:
+      74: -7758438473373798813
+    second: Bip01 Footsteps|H
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
