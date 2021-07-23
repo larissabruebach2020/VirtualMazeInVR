@@ -17,20 +17,20 @@ public class Conditions : MonoBehaviour
         if (!ConditionModel.conditionLib.ContainsKey(1))
         {
             // both right
-            ConditionModel.Init(1, (m_AudioPath + "AgentA_Right1"), "AgentA_Right1", m_RightPosition, m_RightRotation, (m_AudioPath + "AgentB_Right1"), "AgentB_Right1", m_LeftPosition, m_LeftRotation);
-            ConditionModel.Init(2, (m_AudioPath + "AgentA_Right1"), "AgentA_Right1", m_LeftPosition, m_LeftRotation, (m_AudioPath + "AgentB_Right1"), "AgentB_Right1", m_RightPosition, m_RightRotation);
+            ConditionModel.Init(1, (m_AudioPath + "AgentA_Right1"), "AgentA_Right1", "AgentA2_Right1", m_RightPosition, m_RightRotation, (m_AudioPath + "AgentB_Right1"), "AgentB_Right1", "AgentB2_Right1", m_LeftPosition, m_LeftRotation);
+            ConditionModel.Init(2, (m_AudioPath + "AgentA_Right1"), "AgentA_Right1", "AgentA2_Right1", m_LeftPosition, m_LeftRotation, (m_AudioPath + "AgentB_Right1"), "AgentB_Right1", "AgentB2_Right1", m_RightPosition, m_RightRotation);
 
             // both left
-            ConditionModel.Init(3, (m_AudioPath + "AgentA_Left1"), "AgentA_Left1", m_RightPosition, m_RightRotation, (m_AudioPath + "AgentB_Left1"), "AgentB_Left1", m_LeftPosition, m_LeftRotation);
-            ConditionModel.Init(4, (m_AudioPath + "AgentA_Left1"), "AgentA_Left1", m_LeftPosition, m_LeftRotation, (m_AudioPath + "AgentB_Left1"), "AgentB_Left1", m_RightPosition, m_RightRotation);
+            ConditionModel.Init(3, (m_AudioPath + "AgentA_Left1"), "AgentA_Left1", "AgentA2_Left1", m_RightPosition, m_RightRotation, (m_AudioPath + "AgentB_Left1"), "AgentB_Left1", "AgentB2_Left1", m_LeftPosition, m_LeftRotation);
+            ConditionModel.Init(4, (m_AudioPath + "AgentA_Left1"), "AgentA_Left1", "AgentA2_Left1", m_LeftPosition, m_LeftRotation, (m_AudioPath + "AgentB_Left1"), "AgentB_Left1", "AgentB2_Left1", m_RightPosition, m_RightRotation);
 
             // A right, B left
-            ConditionModel.Init(5, (m_AudioPath + "AgentA_Right2"), "AgentA_Right2", m_RightPosition, m_RightRotation, (m_AudioPath + "AgentB_Left2"), "AgentB_Left2", m_LeftPosition, m_LeftRotation);
-            ConditionModel.Init(6, (m_AudioPath + "AgentA_Right2"), "AgentA_Right2", m_LeftPosition, m_LeftRotation, (m_AudioPath + "AgentB_Left2"), "AgentB_Left2", m_RightPosition, m_RightRotation);
+            ConditionModel.Init(5, (m_AudioPath + "AgentA_Right2"), "AgentA_Right2", "AgentA2_Right2", m_RightPosition, m_RightRotation, (m_AudioPath + "AgentB_Left2"), "AgentB_Left2", "AgentB2_Left2", m_LeftPosition, m_LeftRotation);
+            ConditionModel.Init(6, (m_AudioPath + "AgentA_Right2"), "AgentA_Right2", "AgentA2_Right2", m_LeftPosition, m_LeftRotation, (m_AudioPath + "AgentB_Left2"), "AgentB_Left2", "AgentB2_Left2", m_RightPosition, m_RightRotation);
 
             // A left, B right
-            ConditionModel.Init(7, (m_AudioPath + "AgentA_Left2"), "AgentA_Left2", m_RightPosition, m_RightRotation, (m_AudioPath + "AgentB_Right2"), "AgentB_Right2", m_LeftPosition, m_LeftRotation);
-            ConditionModel.Init(8, (m_AudioPath + "AgentA_Left2"), "AgentA_Left2", m_LeftPosition, m_LeftRotation, (m_AudioPath + "AgentB_Right2"), "AgentB_Right2", m_RightPosition, m_RightRotation);
+            ConditionModel.Init(7, (m_AudioPath + "AgentA_Left2"), "AgentA_Left2", "AgentA2_Left2", m_RightPosition, m_RightRotation, (m_AudioPath + "AgentB_Right2"), "AgentB_Right2", "AgentB2_Right2", m_LeftPosition, m_LeftRotation);
+            ConditionModel.Init(8, (m_AudioPath + "AgentA_Left2"), "AgentA_Left2", "AgentA2_Left2", m_LeftPosition, m_LeftRotation, (m_AudioPath + "AgentB_Right2"), "AgentB_Right2", "AgentB2_Right2", m_RightPosition, m_RightRotation);
             
         }
     }

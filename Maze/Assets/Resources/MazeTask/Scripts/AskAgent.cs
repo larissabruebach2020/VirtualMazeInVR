@@ -63,10 +63,12 @@ public class AskAgent : MonoBehaviour
             if (name.Contains("Agent_A"))
             {
                 m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_A);
+                m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_A2);
             }
             else if (name.Contains("Agent_B"))
             {
                 m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_B);
+                m_Animator.SetTrigger(ConditionModel.conditionLib[m_Condition].m_AnimationAgent_B2);
             }
             
             m_AudioSource.Play();
@@ -75,7 +77,6 @@ public class AskAgent : MonoBehaviour
             yield return new WaitUntil(() => !m_AudioSource.isPlaying);
             m_Animator.SetTrigger("idle");
             
-
             // make sure previous animation is finished
             yield return new WaitUntil(() => m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
 
