@@ -2128,7 +2128,7 @@ MonoBehaviour:
   target: {fileID: 0}
   parts:
   - item: {fileID: 5579324607976187618}
-    maximumAngle: 180
+    maximumAngle: 90
     turnSpeed: 5
     maximumRectionDistance: 3
     turnPercentage: 0.1
@@ -2894,7 +2894,7 @@ GameObject:
   - component: {fileID: 4698733922264995869}
   m_Layer: 0
   m_Name: Bip01 Head
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
