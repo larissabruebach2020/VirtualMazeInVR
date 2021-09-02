@@ -12498,7 +12498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: -40}
+  m_AnchoredPosition: {x: 50, y: -45}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &535162595
@@ -12520,7 +12520,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Please enter your pathing code:'
+  m_text: '
+
+    Please enter your pathing code:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12548,8 +12550,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12589,12 +12591,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -82.703064, w: 0}
   m_textInfo:
     textComponent: {fileID: 535162595}
-    characterCount: 31
+    characterCount: 32
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 5
+    wordCount: 6
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -29709,7 +29711,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208228108}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0100021, y: 3.46, z: 2.569}
+  m_LocalPosition: {x: 1, y: 1.7, z: 1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5331516045776809909}
@@ -45311,7 +45313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7e914efa66de14293f4ff9450161c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackingConfiguration: 0
+  trackingConfiguration: 2
   isWalkingEnabled: 1
   vrPlayer: {fileID: 5328721966053723741}
   desktopPlayer: {fileID: 1950796072}
@@ -48343,7 +48345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1950796072
 Transform:
   m_ObjectHideFlags: 0
@@ -48857,8 +48859,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: 200}
-  m_SizeDelta: {x: 800, y: 50}
+  m_AnchoredPosition: {x: 295, y: 190}
+  m_SizeDelta: {x: 1000, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973926056
 MonoBehaviour:
@@ -48880,10 +48882,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "                              Welcome to the VR Maze!\n                    
-    Your objective is to explore the maze.\n            Use forward on the control
-    stick/trackpad to move.                                            You can ask
-    bystanders for advice on where to go using the trigger.\n                                            
-    Have fun!\n\n                         Please enter your participant code:"
+    Your objective is to explore the maze.\n\n            Press in on the control
+    stick/trackpad to move     \n                   forward in the direction you
+    are facing.     \n                                           \n           You
+    can ask bystanders for advice on where to  \n                                 
+    go using your trigger.\n\n                                            Have fun!\n\n                        
+    Please enter your participant code:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -48911,8 +48915,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -48928,7 +48932,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 54
+  m_firstOverflowCharacterIndex: 115
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -48952,12 +48956,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -82.703064, w: 0}
   m_textInfo:
     textComponent: {fileID: 1973926056}
-    characterCount: 404
+    characterCount: 520
     spriteCount: 0
-    spaceCount: 216
-    wordCount: 42
+    spaceCount: 301
+    wordCount: 49
     linkCount: 0
-    lineCount: 7
+    lineCount: 12
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -53111,7 +53115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &5328721966053723729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53266,7 +53270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5328006731472411563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1208228109}
